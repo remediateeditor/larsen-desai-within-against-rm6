@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8">
+  <title>Call and Response</title>
+  <H1>Within and Against</H1>
+<!--Within and Against was born from a desire of MEHULKUMAR DESAI to explore the emotional and philosophical dualities that shape human experience. By placing Gujarati and English lines in deliberate contrast, this work avoids mere translation and instead stages a poetic dialogue, a dissonant duet between inner calm and external chaos, between cultural introspection and global articulation.
+
+The delight and specialty of the work
+What sets Within and Against apart is its use of algorithmic composition to continuously generate poetry that is never quite the same. Each line in Gujarati offers stillness, depth, or surrender, and each opposing English line resists with motion, heat, or conflict. The reader is not simply a viewer but a listener to two voices negotiating meaning in parallel. The beauty lies in their contrast, their refusal to mirror, and the tension that emerges between silence and sound.-->
+  <style>
+    body {
+      background: #101010;
+      color: #f0f0f0;
+      font-family: 'Noto Sans Gujarati', sans-serif;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    #main {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .line-pair {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .guj {
+      width: 48%;
+      text-align: left;
+      background-color: #202020;
+      padding: 0.6rem 1rem;
+      border-left: 4px solid #ffb347;
+      border-radius: 5px;
+      font-size: 1.1rem;
+    }
+
+    .eng {
+      width: 48%;
+      text-align: right;
+      background-color: #1c1c1c;
+      padding: 0.6rem 1rem;
+      border-right: 4px solid #88ccff;
+      border-radius: 5px;
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body onload="startPoem()">
+  <h2>Within and Against</h2>
+  <div id="main"></div>
+
+  <script>
+    const guj = {
+      subjects: ['મૌન', 'અંધકાર', 'યાદો', 'એકલતા', 'પ્રેમ', 'શ્વાસ', 'વિશ્વાસ', 'સપનાં'],
+      verbs: ['શાંતિ આપે છે', 'ઉડાન આપે છે', 'ઉજળે છે', 'ભીંજવે છે', 'મળે છે', 'જાગે છે'],
+      endings: ['મને', 'અંતે', 'હૃદયમાં', 'દરરોજ', 'વિશ્વમાં', 'શબ્દ વિના']
+    };
+
+    const eng = {
+      subjects: ['Noise', 'Light', 'Memory', 'Crowd', 'Desire', 'Fire', 'Time', 'Truth'],
+      verbs: ['haunts me', 'blinds me', 'burns away', 'floods in', 'screams out', 'runs wild'],
+      endings: ['every night.', 'without mercy.', 'again and again.', 'beneath it all.', 'until I fall.']
+    };
+
+    function choose(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function generateGujaratiLine() {
+      return `${choose(guj.subjects)} ${choose(guj.verbs)} ${choose(guj.endings)}.`;
+    }
+
+    function generateEnglishLine() {
+      return `${choose(eng.subjects)} ${choose(eng.verbs)} ${choose(eng.endings)}`;
+    }
+
+    function startPoem() {
+      setInterval(() => {
+        const main = document.getElementById("main");
+
+        const gujLine = generateGujaratiLine();
+        const engLine = generateEnglishLine();
+
+        const pairDiv = document.createElement("div");
+        pairDiv.className = "line-pair";
+
+        const gujDiv = document.createElement("div");
+        gujDiv.className = "guj";
+        gujDiv.textContent = gujLine;
+
+        const engDiv = document.createElement("div");
+        engDiv.className = "eng";
+        engDiv.textContent = engLine;
+
+        pairDiv.appendChild(gujDiv);
+        pairDiv.appendChild(engDiv);
+        main.appendChild(pairDiv);
+
+        if (main.children.length > 30) {
+          main.removeChild(main.firstChild);
+        }
+      }, 2500);
+    }
+  </script>
+
+  <H1>Against and Within </H1>
+<!--Against and Within is a response to Within and Against, to complete an opposition. By placing Gujarati and English lines in deliberate contrast, this work avoids mere translation and instead stages a poetic dialogue, a dissonant duet between inner calm and external chaos, between cultural introspection and global articulation. Deena wanted to create a response to this inner dialogue from the other side of the equation--from a native English speaker grappling with foreign realities. 
+
+The delight and specialty of the work
+What sets Within and Against apart is its use of algorithmic composition to continuously generate poetry that is never quite the same. Each line in English  offers stillness, depth, or surrender, and each opposing Guajarti line resists with motion, heat, or conflict. The reader is not simply a viewer but a listener to two voices negotiating meaning in parallel. The beauty lies in their contrast, their refusal to mirror, and the tension that emerges between silence and sound.-->
+
+<h2>Within and Against</h2>
+  <div id="main"></div>
+
+  <script>
+    const guj = {
+      subjects: [કોલાહલ, 'અંધકાર', 'યાદો', ભીડ, ખાલીપો, 'શ્વાસ', ઉદાસીનતા,અસત્ય, 'સપનાં'],
+<!--શાંતિતો સપનાની વાત હતી, હવે તો બસ કોલાહલનું રાજ્ય છે. (Peace was just a dream, now only noise reigns.), 
+આ અંધકાર ને કોઈ અંત નથી, સવારે પણ સૂરજ સહેમ છે. (This darkness knows no end; even the sun hesitates at dawn.),
+ યાદો હવે આશિર્વાદ નહિ, ઝેરી પડછાયાં બની ગઈ છે. (Memories are no longer blessings, but toxic shadows lingering.),
+ ભીડ વચ્ચે પણ એકલો જ છું, મનની ઊંડાઈ કોઈ સાંભળતું નથી. (Alone in the crowd, unheard in the depths of my mind.), 
+ખાલીપો એ ખાલી ઘર નહિ, એ તો જીવતું શૂન્ય છે. (Emptiness isn't just a room, it's a living void.), 
+શ્વાસ લેવું હવે કોઈ રાહત નથી, દુઃખમાં પણ શ્વાસ જીવતું રહે છે. (Breathing brings no relief, even pain breathes with me.), 
+ઉદાસીનતા તો દિનચર્યાનો ભાગ બની ગઈ છે, એક શોક જેને નામ નથી. (Indifference is now a routine, a grief without a name.), 
+અસત્ય એટલો ઘાટો છે, કે સત્ય દફન થઈ ગયું છે અવાજ વગર.(Falsehood is so thick, truth was buried without a sound.), 
+સપનાં હવે આંખો નહીં ભીંજવે, તે તૂટવા માટે જ આવે છે. (Dreams no longer wet my eyes, they come only to shatter.).-->
+
+
+ verbs: ['મને સમજતો નથી"', 'મને તકલીફ આપે છે', 'ગાઢ થઈ જાય છે, 'ઉતરી જાય છે', 'દૂર ધકેલી દે છે', 'દબાઈ જાય છે'],
+<!-- મારું મૌન બોલે છે,પણ તે મને સમજતો નથી… ("My silence speaks, yet he does not understand me…), 
+જેને પ્રેમ માન્યો, એજ રોજ મને તકલીફ આપે છે… ("The one I called love, now causes me pain each day…"), હાવભાગો હવામાં ફેલાતા નહીં, હવે તો વાત પણ ગાઢ થઈ જાય છે… ("No longer do emotions drift in air, even words now grow heavy and dense…"), 
+તારું ક્રોધાવેશ પણ હવે નથી રહ્યો, શાંત સમંદર નહિ, હવે તો ખાલીપણું ઉતરી જાય છે… ("Even your rage is gone now, not a calm sea, just emptiness that settles in…"),
+એ નજીક આવવાનો કારણ શોધતો હતો, હવે બીના કારણે મને દૂર ધકેલી દે છે… (He used to search for reasons to come closer. Now, without reason, he pushes me away…),
+મારું સપનું, મારી ઈચ્છાઓ, દરરોજ ક્યાંક દબાઈ જાય છે – અવાજ વિના… (My dreams, my desires –every day they get suppressed – without a sound…).-->
+      endings: [દરરોજ એ જ રીતે, મારાથી દૂર, 'મૌનના અંતરાળે', અંધારી મધરાતે, કોઈ ઉત્તર વગર, હૈયાની ખામોશીમાં']
+    };
+<!--શબ્દો આવે છે, પણ મૂર્છિત રહે છે – દરરોજ એ જ રીતે.("Words arrive, but remain faint, every day, the same way."), 
+જેથી આશા હતી, હવે એ બધું મારાથી દૂર છે.("What once gave hope, now all lies far from me."), 
+સવાલો ઊભા રહે છે, જવાબો ગુમ છે મૌનના અંતરાળે. ("Questions remain, answers are lost in the depths of silence."), 
+અંજાણ ઉદાસી ફરી આવે છે અંધારી મધરાતે. ("A strange sadness returns in the dark midnight."), 
+જેમ જીવંત રહીએ છીએ, પણ કોઈ ઉત્તર વગર. ("As if we go on living, but without an answer."),
+અણસાંબળી પીડા વાગે છે હૈયાની ખામોશીમાં. ("Unheard pain echoes in the silence of the heart.").-->
+    const eng = {
+      subjects: ['Silence', 'Light', 'Memory', 'Solitude', 'Fullness', 'Warmth', 'Time', 'Truth'],
+<!--And now the years, or perhaps centuries, have passed. Like the ancient tree I lean against, many seasons of growth have separated me from the core I used to be. Light and Memory surround me in my calm refuge, holding together the eternal Time of my Truth. In this, my true shelter from the storm, Silence washes away the Noise from my mind. Away from the Madding Crowds, I reveal in my Solitude,  I have no burning Fires of  Desire, I am replete in the Warmth of the Fullness of my soul.-->
+
+
+      verbs: ['understands me', 'comforts me', 'melts away', 'floods in', 'breathes in', 'runs wild'], 
+<!--The angst I once felt now melts away into each calming breath I take in. My memories neither haunt nor blind me. I look back on my age with a comfortable understanding of where I have been. Here, peace floods into me, my happiness runs wild into my now.  -->
+
+
+      endings: ['every night.', 'without mercy.', 'again and again.', 'beneath it all.', 'until I sleep.']
+<!--Again the day comes, again the night falls, again I have lived another day. Every night, I meditate. Beneath it all, I, like my mountain fastness, am eternal. Within my soul, I gentle the edges of my life, I pour grace and peace to balance the times I, too, have fought without mercy.  I will no longer cry with my nightmares until I fall asleep. -->
+    };
+
+    function choose(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function generateGujaratiLine() {
+      return `${choose(guj.subjects)} ${choose(guj.verbs)} ${choose(guj.endings)}.`;
+    }
+
+    function generateEnglishLine() {
+      return `${choose(eng.subjects)} ${choose(eng.verbs)} ${choose(eng.endings)}`;
+    }
+
+    function startPoem() {
+      setInterval(() => {
+        const main = document.getElementById("main");
+
+        const gujLine = generateGujaratiLine();
+        const engLine = generateEnglishLine();
+
+        const pairDiv = document.createElement("div");
+        pairDiv.className = "line-pair";
+
+        const gujDiv = document.createElement("div");
+        gujDiv.className = "guj";
+        gujDiv.textContent = gujLine;
+
+        const engDiv = document.createElement("div");
+        engDiv.className = "eng";
+        engDiv.textContent = engLine;
+
+        pairDiv.appendChild(gujDiv);
+        pairDiv.appendChild(engDiv);
+        main.appendChild(pairDiv);
+
+        if (main.children.length > 30) {
+          main.removeChild(main.firstChild);
+        }
+      }, 2500);
+    }
+  </script>
+</body>
+</html>
+
+
